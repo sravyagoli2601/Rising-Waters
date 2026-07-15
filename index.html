@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flood Prediction</title>
+</head>
+<body>
+    <h2>Flood Prediction</h2>
+
+    <input type="number" id="rain" placeholder="Rainfall"><br><br>
+    <input type="number" id="cloud" placeholder="Cloud Visibility"><br><br>
+    <input type="number" id="season" placeholder="Seasonal Rainfall"><br><br>
+
+    <button onclick="predict()">Predict</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function predict() {
+            let rain = Number(document.getElementById("rain").value);
+            let cloud = Number(document.getElementById("cloud").value);
+            let season = Number(document.getElementById("season").value);
+
+            if (rain > 1000 && cloud > 70 && season > 800)
+                document.getElementById("result").innerHTML = "Flood Likely";
+            else
+                document.getElementById("result").innerHTML = "No Flood";
+        }
+    </script>
+</body>
+</html>
